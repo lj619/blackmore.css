@@ -1,0 +1,652 @@
+/** Blackmore.css Dark  - Made by LJCoder619. 
+    This is a poopy amalgamation of various CSS styles that exist on this website, including ones that I originally created. 
+    If you are using this for a blog, please include this comment at the start of the code. 
+    If you are using a snippet, please credit me, and if you are using one of the snippets 
+    included in here from someone else's code (e.g. happycupcake or forester2015, please credit 
+    them, not me. 
+**/
+
+/** Godawful CSS code ensues **/
+/** Fonts Setup and Animations Setup **/
+@import url('https://fonts.googleapis.com/css2?family=Yaldevi:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@800&display=swap');
+
+/* This is the gif that appears when the page is loading, change the URLs to whatever you like. */
+@keyframes waiting{
+    0%{
+          background: url(https://media.tenor.com/JO-wACOYhUYAAAAC/manga-jojo.gif) no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+           background-size: cover;
+           top:0;
+   }
+    90%{
+      background: url(https://media.tenor.com/JO-wACOYhUYAAAAC/manga-jojo.gif) no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+           background-size: cover;
+      top:0;
+  }
+    93%{
+      background: url(https://media.tenor.com/JO-wACOYhUYAAAAC/manga-jojo.gif) no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+           background-size: cover;
+      height:105vw;
+  }
+    100%{
+      content:"";
+      display: none;
+      top:-250vh;
+  }
+  }
+body::before {
+    top:100vh;
+    content:" ";
+    animation: waiting 2s !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    position: fixed;
+    font-size: 20px;
+    background-color: black;
+    z-index:1000000000000000000000000000000000000000;
+}
+/* Title Animation */ 
+@keyframes header {
+    0%{text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2)}
+    100%{text-shadow: 5px 5px 20px #000;transform: scale(1.25, 1.25);}
+}
+/* Entrywrap Animation */
+@keyframes pulse { 
+ 0% {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    }
+ 
+  70% {
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.7), 0 8px 30px 0 rgba(0, 0, 0, 0.7);
+    }
+ 
+   100% {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    }
+}
+/* Navbox Styling */
+#navigation_box {
+    position: fixed;
+    background-color:#16161e;
+    color: #c0caf5;
+    border: none;
+    font-size: 1em;
+    white-space: nowrap;
+    padding: 1em;
+    opacity: 1;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 3rem;
+    font-family: 'Yaldevi', sans-serif;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+#left_navigation_box, #right_navigation_box, #left_navigation_box a, #right_navigation_box a {
+    /*margin-top: 0.6%;
+    margin-bottom: 0.6%; */
+    font-size: 16px;
+    color: #c0caf5;
+    font-family: 'Yaldevi', sans-serif;
+}
+#right_navigation_box a:hover, #right_navigation_box a:focus {
+    background-color: #16161e;
+    border-bottom: none !important;
+}
+#right_navigation_box .blog-login + .blog-info {
+    left: 2.5rem;
+    background-color: #16161e;
+    z-index: 12;
+}
+#right_navigation_box .blog-login + .blog-info:hover {
+    background-color: #16161e;
+}
+#left_navigation_box a[href = "/community"]::before {
+    content: "t";
+    padding-right: 9px;
+    font-family: AoPS;
+    top: 1px;
+}   
+#left_navigation_box a[href = "/community/c88"]::before {
+    content: "d";
+    padding-right: 5px;
+    font-family: AoPS;
+    top: 1px;
+}   
+#right_navigation_box a#blog-subscribe::before {
+    content: "C";
+    padding-right: 5px;
+    font-family: AoPS;
+    top: 1px;
+}
+#right_navigation_box a.blog-logout::before {
+    content: "O";
+    padding-right: 5px;
+    font-family: AoPS;
+    top: 1px;
+}
+#right_navigation_box a.blog-info::before {
+    content: "3";
+    padding-right: 5px;
+    font-family: AoPS;
+    top: 1px;
+}
+/* Header */
+#header{
+    background-color: #16161e;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 120px;
+    opacity: 99%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+#header h1 {
+    color: #c0caf5;
+    background-color: transparent;
+    text-shadow: 2px 2px 5px #000;
+    font-family: 'Stick No Bills', sans-serif;
+    font-size: 60px;
+    transition: all 0.5s;
+     -webkit-transition: all 0.5s;
+     -moz-transition: all 0.5s; 
+     -o-transition: all 0.5s;
+}
+#header h1:hover {    
+    animation-name: header;
+    animation-duration: 1.5s;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s; 
+    -o-transition: all 0.5s;
+}
+/* Posts */
+.entry {
+    margin-bottom: 25px;
+}
+.entry h1 a {
+    font-family: 'Gemunu Libre', sans-serif;
+    padding: 5px;
+    padding-left: 15px;
+    border-radius: 10px;
+}
+.entry h2 {
+    padding-left: 15px;
+}
+div .entry {
+    background-color : #16161e;
+    color: #c0caf5;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #c0caf5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+div .entrywrap {
+    background-color: transparent;
+    border: none;
+}
+div .entry:hover {
+    background-color : #1a1b26;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    animation: pulse 1.5s infinite;
+}
+.message {
+    font-size: 17px;
+    padding: 10px;
+}
+.message a {
+    color: #7aa2f7 !important; 
+}
+/* General Page Setup */
+#wrapper {
+    margin: auto;
+    width: 1000px;
+    padding-top: 60px;
+    background: none;
+    border: none;
+}
+#main {
+    width: 725px;
+    float: right;
+}
+#side {
+    margin: auto;
+    padding-left: 15px;
+    margin-right: 10px;
+}
+#content {
+    background-color:#16161e;
+    border: 1px solid #16161e;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #c0caf5;
+    opacity: 99%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s; 
+    -o-transition: all 0.5s;
+}
+body {
+    background: #1a1b26 url(https://c.tenor.com/9oAwlR-3nTMAAAAd/blackmore.gif) no-repeat center center fixed;
+    background-size: cover;
+    color: #c0caf5;
+    font-family: 'Yaldevi', sans-serif;
+    cursor: url('https://staticdelivery.nexusmods.com/mods/3174/images/thumbnails/85/85-1585932190-669867691.png'),auto;
+}
+/* The fine details */
+a.post-replies, a.post-comment, a.blog-edit-post, a.blog-moderate-topic, a.blog-delete-post, a.blog-report-post, p.author {
+    font-size: 13px;
+    padding: 5px;
+    /* background-color: #1a1b26;
+    border-radius: 10px; */
+    transition: all 0.5s;
+    text-decoration: none !important;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+img.blog-direct-post-link {
+    display: none;
+}
+.avatar img {
+    border-radius: 10px;
+}
+a, h2 {
+    color: #c0caf5 !important;
+    font-family: 'Yaldevi', sans-serif;
+}
+.blog-num-comments {
+    color: #c0caf5 !important;
+}
+.row1 {
+    background-color:#16161e;
+    opacity: 99%;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.row1:hover {
+    background-color: #1a1b26;
+     transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    animation: pulse 1.5s infinite;
+}
+.row2 {
+    background-color:#1a1b26;
+    opacity: 99%;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.row2:hover {
+    background-color: #16161e;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    animation: pulse 1.5s infinite;
+}
+.row1, .row2 {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    border: none;
+}
+div.comment {
+    border: none;
+}
+.cmty-item-tag, .cmty-item-tag:hover {
+    background-color: #24283b !important;
+    font-family: 'Yaldevi', sans-serif;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.cmty-item-tag:hover {
+    color: #a9b1d6 !important;
+}
+.cmty-post-edit-info {
+    color: #24283b;
+}
+textarea {
+    font-family: 'Yaldevi', sans-serif !important;
+}
+span#submit {
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #1a1b26;
+    border-radius: 10px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+span#submit:hover {
+    background-color: #16161e;
+}
+.blog-delete-shout {
+    color: #f7768e !important;
+}
+/* The Shoutbox */
+.blog-shout {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#message {
+    width: 240px;
+    margin-top: 5px;
+}
+#message, .blog-shout-wrapper, .blog-tags-wrapper {
+    border: 1px solid #c0caf5;
+    opacity: 99%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    background-color: #16161e;
+    color: #c0caf5;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+#message:hover, .blog-shout-wrapper:hover, .blog-tags-wrapper:hover {
+    background-color: #1a1b26;
+     transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    animation: pulse 1.5s infinite;
+}
+.blog-shout-wrapper {
+    background-color: rgba(0,0,0,0);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.blog-tags-wrapper {
+    margin-top: 5px;
+}
+#search-widget > div {
+    background-color: #1a1b26;
+    color: #c0caf5;
+}
+input.button2 {
+    background-color: #1a1b26;
+    color: #c0caf5;
+    border: none;
+    vertical-align: bottom;
+    border-radius: 25%;
+}
+fieldset, #blog_keywords {
+    border: none;
+}
+#blog_keywords {
+    border-radius: 25%;
+    background-color: #1a1b26;
+    color: #c0caf5;
+}
+/* Custom Scrollbar */
+::placeholder {
+    color: #c0caf5;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #16161e;
+}
+::-webkit-scrollbar-thumb {
+    background: #24283b;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #c0caf5;
+}
+.cmty-poll-display {
+    color: #c0caf5;
+    background-color: #16161e;
+    border: 1px solid #c0caf5;
+    border-radius: 10px;
+}
+.cmty-poll-result-bar {
+    height: 10px;
+    background-color: #c0caf5;
+}
+.btn-primary, .btn-primary:hover {
+    color: #16161e;
+    background-color: #c0caf5;
+}
+/* Gives the username the AoPS admin symbol */
+a[href="/community/user/412719"]::before {
+    content: "X "!important;
+    font-family: aops !important;
+}
+/* a[href="/community/user/412719"] {
+    font-size: 0px !important; 
+}
+a[href="/community/user/412719"]::after {
+    content: "big daddy";
+} */
+a[href="/community/user/307696"]{font-size: 0px} 
+a[href="/community/user/307696"]::before {
+  font-size: 11pt !important; 
+  font-weight: bold; 
+  content: "Succulent Child";
+}
+a[href="/community/user/783849"]{font-size: 0px} 
+a[href="/community/user/783849"]::before {
+  font-size: 11pt !important; 
+  font-weight: bold; 
+  color: #bb9af7; 
+  content: "gigachad";
+}
+a[href="/community/user/829414"]{font-size: 0px} 
+a[href="/community/user/829414"]::before {
+  font-size: 11pt !important; 
+  font-weight: bold; 
+  color: #9ece6a; 
+  content: "turtel";
+}
+#post-new-entry-p img{ /* Pencil image next to post new entry */
+    display: none;
+}
+div.entry h2 img, div.comment h2 img { /* Hides page image next to the second header */
+    display: none;
+}
+li.row1, li.row2 {
+    transition: all 1s;
+    -webkit-transition: all 1s; 
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+}
+li.row1:hover, li.row2:hover {
+    transition-delay: 1 s;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg); 
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+
+/* Fluid archives by happycupcake - i did not make this, credits to him. I only used a white image for dark mode */
+.month-image {
+  background: url(https://i.ibb.co/x88vnTt/icon.png) !important;
+  background-size: 16px 16px !important;
+  padding-left: 16px;
+  width: 16px;
+  height: 16px;
+  transition: transform 1s;
+  transform: rotate(90deg);
+}
+.month-image[alt="+"] {
+  transition: transform 1s;
+  transform: rotate(-360deg);
+}
+.archive-month-topics {
+  display: block;
+  height: auto;
+}
+.archive-row {
+  transition: transform 0.4s 0.2s, height 0.4s;
+  height: 20px;
+  padding: 0 0 0 30px;
+}
+.archive-month-collapsed .archive-row {
+  transition: transform 0.4s, height 0.2s 0.2s;
+  transform: scaleY(0);
+  height: 0;
+}
+/* Icons - from clear.css, credits to forester2015, i did not make this */
+.widget-title:before {
+  position: relative;
+}
+div#archive-widget.widget .widget-title:before {
+  content: "8";
+  padding-right: 5px;
+  font-family: AoPS;
+  top: 1px;
+}
+div#shouts-widget.widget .widget-title:before {
+  content: "t";
+  padding-right: 9px;
+  font-family: AoPS;
+  top: 1px;
+}
+div#contrib-widget.widget .widget-title:before {
+  content: "u";
+  padding-right: 5px;
+  font-family: AoPS;
+  top: 3px;
+}
+#side > div .widget-title:before {
+  font-size: 18px;
+  content: "U";
+  padding-right: 5px;
+  font-family: AoPS;
+  top: 3px;
+}
+div#about-owner-widget.widget .widget-title:before {
+  content: "w";
+  padding-right: 7.5px;
+  font-family: AoPS;
+  top: 1px;
+}
+div#stats-widget.widget .widget-title:before {
+  content: "9";
+  padding-right: 6px;
+  font-family: AoPS;
+  top: 2px;
+}
+div#search-widget.widget .widget-title:before {
+  content: "M";
+  padding-right: 7.5px;
+  font-family: AoPS;
+  top: 1px;
+}
+a#post-new-entry {
+   font-weight: bold;
+}
+a#post-new-entry::before {
+    content: "V";
+    padding-right: 7.5px;
+    font-family: AoPS;
+    top: 1px;
+}
+p.author::before {
+    content: "x ";
+    font-family: AoPS;
+    top: 1px;
+}
+a.blog-edit-post::before {
+    content: "L ";
+    font-family: AoPS;
+    top: 1px;
+}
+a.blog-delete-post::before {
+    content: "J ";
+    font-family: AoPS;
+    top: 1px;
+}
+a.blog-report-post::before {
+    content: "Z ";
+    font-family: AoPS;
+    top: 1px;
+}
+a.post-replies::before {
+    content: "u ";
+    font-family: AoPS;
+    top: 1px;
+}
+a.post-comment::before {
+    content: "V ";
+    font-family: AoPS;
+    top: 1px;
+}
+a.blog-moderate-topic::before {
+    content: "X ";
+    font-family: AoPS;
+    top: 1px;
+}
+.entry h2::before {
+    content: "V ";
+    font-family: AoPS;
+    top: 1px;
+}
+/* Hide Tag Color */
+a.cmty-hide-heading, span.cmty-hide-heading {
+    text-decoration: none;
+    color: #1a1b26;
+    background-color: #24283b;
+    border-radius: 2px;
+}
+a.cmty-hide-heading:hover, span.cmty-hide-heading:hover {
+    text-decoration: none;
+    color: #c0caf5;
+    background-color: #7aa2f7;
+}
+.faux-link {
+    color: #7dcfff; 
+}
+.cmty-post-edit-info {
+    color: #414868;
+}
+/**  Credits  **/
+#main::after {
+    content: "⍼ blackmore.css by LJCoder619 ⍼";
+    margin-top: 15px;
+    text-align: center;
+    color: #a9b1d6;
+    display: block;
+    margin-bottom: 5px;
+}
