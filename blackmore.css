@@ -1,7 +1,7 @@
 /* blackmore.css - made by LJCoder619 */ 
 
 /* Import Fonts */ 
-@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@600&family=Stick+No+Bills:wght@800&family=Yaldevi:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@600&family=Stick+No+Bills:wght@800&family=Yaldevi:wght@400&display=swap');
 
 /* Define variables for colorscheme (Tokyo Night), fonts, shadows, opacity, rounded corners so that CSS can be easily modified */ 
 :root { 
